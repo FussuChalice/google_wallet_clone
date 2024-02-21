@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:google_wallet_clone/assets.dart';
 import 'package:google_wallet_clone/screens/screens.dart';
+import 'package:pixel_perfect/pixel_perfect.dart';
 
 class Application extends StatefulWidget {
   const Application({super.key});
@@ -14,7 +16,10 @@ class _ApplicationState extends State<Application> {
     return MaterialApp(
       theme: ThemeData(useMaterial3: true),
       debugShowCheckedModeBanner: false,
-      home: const HomeScreen(),
+      home: PixelPerfect(
+          assetPath: Assets.ASSETS_PPERF_JPG,
+          scale: 2,
+          child: const WelcomeScreen()),
     );
   }
 }

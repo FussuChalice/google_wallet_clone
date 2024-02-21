@@ -10,8 +10,20 @@ class Assets {
   /// ![preview](file:///run/media/mmakaluk/0df67660-9723-42fa-bf01-b5906eefa4c1/Projects/google_wallet_clone/assets/9P.webp)
   static const String ASSETS_9P_WEBP = 'assets/9P.webp';
 
+  /// ![preview](file:///run/media/mmakaluk/0df67660-9723-42fa-bf01-b5906eefa4c1/Projects/google_wallet_clone/assets/Dq.webp)
+  static const String ASSETS_DQ_WEBP = 'assets/Dq.webp';
+
+  /// ![preview](file:///run/media/mmakaluk/0df67660-9723-42fa-bf01-b5906eefa4c1/Projects/google_wallet_clone/assets/Google_Pay_Logo.png)
+  static const String ASSETS_GOOGLE_PAY_LOGO_PNG = 'assets/Google_Pay_Logo.png';
+
+  /// ![preview](file:///run/media/mmakaluk/0df67660-9723-42fa-bf01-b5906eefa4c1/Projects/google_wallet_clone/assets/QC.png)
+  static const String ASSETS_QC_PNG = 'assets/QC.png';
+
   /// ![preview](file:///run/media/mmakaluk/0df67660-9723-42fa-bf01-b5906eefa4c1/Projects/google_wallet_clone/assets/a3.webp)
   static const String ASSETS_A3_WEBP = 'assets/a3.webp';
+
+  /// ![preview](file:///run/media/mmakaluk/0df67660-9723-42fa-bf01-b5906eefa4c1/Projects/google_wallet_clone/assets/abcc.webp)
+  static const String ASSETS_ABCC_WEBP = 'assets/abcc.webp';
 
   /// ![preview](file:///run/media/mmakaluk/0df67660-9723-42fa-bf01-b5906eefa4c1/Projects/google_wallet_clone/assets/dW.webp)
   static const String ASSETS_DW_WEBP = 'assets/dW.webp';
@@ -36,6 +48,9 @@ class Assets {
 
   /// ![preview](file:///run/media/mmakaluk/0df67660-9723-42fa-bf01-b5906eefa4c1/Projects/google_wallet_clone/assets/p2p_success.json)
   static const String ASSETS_P2P_SUCCESS_JSON = 'assets/p2p_success.json';
+
+  /// ![preview](file:///run/media/mmakaluk/0df67660-9723-42fa-bf01-b5906eefa4c1/Projects/google_wallet_clone/assets/pperf.jpg)
+  static const String ASSETS_PPERF_JPG = 'assets/pperf.jpg';
 
   /// ![preview](file:///run/media/mmakaluk/0df67660-9723-42fa-bf01-b5906eefa4c1/Projects/google_wallet_clone/assets/security_animation_foil.json)
   static const String ASSETS_SECURITY_ANIMATION_FOIL_JSON =
