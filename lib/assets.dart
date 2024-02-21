@@ -16,6 +16,9 @@ class Assets {
   /// ![preview](file:///run/media/mmakaluk/0df67660-9723-42fa-bf01-b5906eefa4c1/Projects/google_wallet_clone/assets/Google_Pay_Logo.png)
   static const String ASSETS_GOOGLE_PAY_LOGO_PNG = 'assets/Google_Pay_Logo.png';
 
+  /// ![preview](file:///run/media/mmakaluk/0df67660-9723-42fa-bf01-b5906eefa4c1/Projects/google_wallet_clone/assets/Kz.json)
+  static const String ASSETS_KZ_JSON = 'assets/Kz.json';
+
   /// ![preview](file:///run/media/mmakaluk/0df67660-9723-42fa-bf01-b5906eefa4c1/Projects/google_wallet_clone/assets/QC.png)
   static const String ASSETS_QC_PNG = 'assets/QC.png';
 
