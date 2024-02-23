@@ -16,7 +16,8 @@ enum ColorSeed {
   yellow('Yellow', Colors.yellow),
   orange('Orange', Colors.orange),
   deepOrange('Deep Orange', Colors.deepOrange),
-  pink('Pink', Colors.pink);
+  pink('Pink', Colors.pink),
+  custom('Custom', Color(0xff00668B));
 
   const ColorSeed(this.label, this.color);
   final String label;
