@@ -1,25 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_wallet_clone/assets.dart';
+import 'package:google_wallet_clone/helpers/url_launcher_helper.dart';
 import 'package:google_wallet_clone/material_theme.dart';
 import 'package:google_wallet_clone/screens/screens.dart';
 import 'package:google_wallet_clone/widgets/widgets.dart';
 import 'package:lottie/lottie.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});
 
   @override
   State<WelcomeScreen> createState() => _WelcomeScreenState();
-}
-
-Future<void> _launchTermsAndPrivacyPolicy() async {
-  Uri url = Uri.parse("https://support.google.com/googlepay/answer/9039712");
-
-  if (!await launchUrl(url)) {
-    throw Exception('Could not launch $url');
-  }
 }
 
 class _WelcomeScreenState extends State<WelcomeScreen> {
@@ -126,7 +118,10 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     height: 20,
                   ),
                   InkWell(
-                    onTap: _launchTermsAndPrivacyPolicy,
+                    onTap: () {
+                      URLLauncherHelper.launchURL(
+                          "https://support.google.com/googlepay/answer/9039712");
+                    },
                     borderRadius: const BorderRadius.all(Radius.circular(25)),
                     child: RichText(
                       textAlign: TextAlign.center,
