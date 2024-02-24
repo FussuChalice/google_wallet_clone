@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_wallet_clone/assets.dart';
+import 'package:google_wallet_clone/material_theme.dart';
+import 'package:google_wallet_clone/screens/screens.dart';
 import 'package:google_wallet_clone/widgets/widgets.dart';
 import 'package:lottie/lottie.dart';
-import 'package:flutter/services.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});
@@ -12,18 +14,18 @@ class WelcomeScreen extends StatefulWidget {
   State<WelcomeScreen> createState() => _WelcomeScreenState();
 }
 
+Future<void> _launchTermsAndPrivacyPolicy() async {
+  Uri url = Uri.parse("https://support.google.com/googlepay/answer/9039712");
+
+  if (!await launchUrl(url)) {
+    throw Exception('Could not launch $url');
+  }
+}
+
 class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      systemNavigationBarColor:
-          Theme.of(context).scaffoldBackgroundColor, // navigation bar color
-      statusBarColor:
-          Theme.of(context).scaffoldBackgroundColor, // status bar color
-      statusBarIconBrightness: Theme.of(context).brightness == Brightness.light
-          ? Brightness.dark
-          : Brightness.light,
-    ));
+    setSystemUIOverlayStyle(context);
 
     return Scaffold(
       body: Column(
@@ -50,123 +52,118 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           ),
           Expanded(
             child: Padding(
-                padding: const EdgeInsets.only(left: 24, right: 24, top: 24),
-                child: Column(
-                  children: [
-                    Text(
-                      "Get fast, secure access to your everydat essentials",
-                      style: GoogleFonts.poppins(fontSize: 29),
+              padding: const EdgeInsets.only(left: 24, right: 24, top: 24),
+              child: Column(
+                children: [
+                  Text(
+                    "Get fast, secure access to your everydat essentials",
+                    style: GoogleFonts.poppins(fontSize: 29),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Text(
+                    "Tap to pay everywhere Google Pay is accepted, shop with your loyalty cards? board a flight, and more, all with just your phone",
+                    style: GoogleFonts.poppins(
+                      fontSize: 14,
+                      color: Theme.of(context).textTheme.bodyLarge?.color,
                     ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    Text(
-                      "Tap to pay everywhere Google Pay is accepted, shop with your loyalty cards? board a flight, and more, all with just your phone",
-                      style: GoogleFonts.poppins(
-                        fontSize: 14,
-                        color: Theme.of(context).textTheme.bodyLarge?.color,
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    Lottie.asset(
-                      Assets.ASSETS_KZ_JSON,
-                      repeat: false,
-                      width: 280,
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    SizedBox(
-                      width: 270,
-                      child: InkWell(
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(100)),
-                        onTap: () {},
-                        child: Padding(
-                          padding: const EdgeInsets.all(10),
-                          child: Column(
-                            children: [
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text("Learn how ",
-                                      style: TextStyle(
-                                          color: Theme.of(context).primaryColor,
-                                          fontWeight: FontWeight.bold)),
-                                  const Text(
-                                    "passes in your Wallet will",
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  )
-                                ],
-                              ),
-                              const Text(
-                                "appear across Google",
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Lottie.asset(
+                    Assets.ASSETS_KZ_JSON,
+                    repeat: false,
+                    width: 280,
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  SizedBox(
+                    width: 270,
+                    child: InkWell(
+                      borderRadius:
+                          const BorderRadius.all(Radius.circular(100)),
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  const LearnHowPassesInYourWalletScreen()),
+                        );
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.all(10),
+                        child: RichText(
+                          textAlign: TextAlign.center,
+                          text: TextSpan(
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color:
+                                  Theme.of(context).textTheme.bodyLarge?.color,
+                            ),
+                            children: <TextSpan>[
+                              TextSpan(
+                                text: "Learn how ",
                                 style: TextStyle(
-                                  fontWeight: FontWeight.bold,
+                                  color: Theme.of(context).primaryColor,
                                 ),
-                              )
+                              ),
+                              const TextSpan(
+                                text: "passes in your Wallet will",
+                              ),
+                              const TextSpan(
+                                text: "appear across Google",
+                              ),
                             ],
                           ),
                         ),
                       ),
                     ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    SizedBox(
-                      height: 40,
-                      child: InkWell(
-                        onTap: () {},
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(25)),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Text(
-                              "Terms ",
-                              style: TextStyle(
-                                  fontSize: Theme.of(context)
-                                      .textTheme
-                                      .bodySmall
-                                      ?.fontSize,
-                                  color: Theme.of(context).primaryColor),
-                            ),
-                            Text(
-                              "and ",
-                              style: TextStyle(
-                                fontSize: Theme.of(context)
-                                    .textTheme
-                                    .bodySmall
-                                    ?.fontSize,
-                              ),
-                            ),
-                            Text(
-                              "Privacy Policy",
-                              style: TextStyle(
-                                  fontSize: Theme.of(context)
-                                      .textTheme
-                                      .bodySmall
-                                      ?.fontSize,
-                                  color: Theme.of(context).primaryColor),
-                            ),
-                          ],
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  InkWell(
+                    onTap: _launchTermsAndPrivacyPolicy,
+                    borderRadius: const BorderRadius.all(Radius.circular(25)),
+                    child: RichText(
+                      textAlign: TextAlign.center,
+                      text: TextSpan(
+                        style: TextStyle(
+                          fontSize:
+                              Theme.of(context).textTheme.bodySmall?.fontSize,
+                          color: Theme.of(context).textTheme.bodyLarge?.color,
                         ),
+                        children: [
+                          TextSpan(
+                            text: "Terms",
+                            style: TextStyle(
+                              color: Theme.of(context).primaryColor,
+                            ),
+                          ),
+                          const TextSpan(text: " and "),
+                          TextSpan(
+                            text: "Privacy Policy",
+                            style: TextStyle(
+                              color: Theme.of(context).primaryColor,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
-                    const SizedBox(
-                      height: 5,
-                    ),
-                    FilledButton(
-                      onPressed: () {},
-                      child: Text("View Wallet"),
-                    ),
-                  ],
-                )),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  FilledButton(
+                    onPressed: () {},
+                    child: const Text("View Wallet"),
+                  ),
+                ],
+              ),
+            ),
           ),
         ],
       ),

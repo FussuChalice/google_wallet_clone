@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 // Whether the user has chosen a theme color via a direct [ColorSeed] selection,
 // or an image [ColorImageProvider].
@@ -41,4 +42,16 @@ enum ColorImageProvider {
   const ColorImageProvider(this.label, this.url);
   final String label;
   final String url;
+}
+
+void setSystemUIOverlayStyle(BuildContext context) {
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    systemNavigationBarColor:
+        Theme.of(context).scaffoldBackgroundColor, // navigation bar color
+    statusBarColor:
+        Theme.of(context).scaffoldBackgroundColor, // status bar color
+    statusBarIconBrightness: Theme.of(context).brightness == Brightness.light
+        ? Brightness.dark
+        : Brightness.light,
+  ));
 }

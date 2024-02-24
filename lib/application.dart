@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_wallet_clone/material_theme_constants.dart';
+import 'package:google_wallet_clone/material_theme.dart';
 import 'package:google_wallet_clone/screens/screens.dart';
 
 class Application extends StatefulWidget {

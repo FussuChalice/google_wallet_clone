@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_wallet_clone/assets.dart';
 import 'package:google_wallet_clone/colors.dart';
+import 'package:google_wallet_clone/material_theme.dart';
 import 'package:google_wallet_clone/widgets/widgets.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -13,6 +14,8 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
+    setSystemUIOverlayStyle(context);
+
     return Scaffold(
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
