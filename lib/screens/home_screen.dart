@@ -75,7 +75,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     height: 20,
                   ),
                   TipCard(
-                    buttonText: "Lear how to tap to pay",
+                    buttonText: "Learn how to tap to pay",
                     title: "Pay quickly and securely",
                     description:
                         "Tap to pay everywhere Google\nPay is accepted",

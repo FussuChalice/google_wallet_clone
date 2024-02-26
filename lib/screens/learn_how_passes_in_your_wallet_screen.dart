@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_wallet_clone/helpers/url_launcher_helper.dart';
 import 'package:google_wallet_clone/material_theme.dart';
+import 'package:google_wallet_clone/screens/screens.dart';
 
 class LearnHowPassesInYourWalletScreen extends StatefulWidget {
   const LearnHowPassesInYourWalletScreen({super.key});
@@ -90,6 +91,12 @@ class _LearnHowPassesInYourWalletScreenState
                               text: "Manage passes data ",
                               style: TextStyle(
                                   color: Theme.of(context).primaryColor),
+                              recognizer: TapGestureRecognizer()
+                                ..onTap = () {
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (context) =>
+                                          const ManagePassesDataScreen()));
+                                },
                             ),
                             const TextSpan(
                               text:
