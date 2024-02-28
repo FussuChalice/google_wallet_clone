@@ -1,4 +1,6 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:google_wallet_clone/helpers/helpers.dart';
 
 class ManagePassesDataScreen extends StatefulWidget {
   const ManagePassesDataScreen({super.key});
@@ -73,6 +75,11 @@ class _ManagePassesDataScreenState extends State<ManagePassesDataScreen> {
                               style: TextStyle(
                                 color: Theme.of(context).primaryColor,
                               ),
+                              recognizer: TapGestureRecognizer()
+                                ..onTap = () {
+                                  URLLauncherHelper.launchURL(
+                                      "https://support.google.com/wallet/answer/12059410?visit_id=638447083244673584-2903819243&p=personalize_wallet&rd=1#personalize_wallet");
+                                },
                             ),
                           ],
                         ),
@@ -130,6 +137,11 @@ class _ManagePassesDataScreenState extends State<ManagePassesDataScreen> {
                               style: TextStyle(
                                 color: Theme.of(context).primaryColor,
                               ),
+                              recognizer: TapGestureRecognizer()
+                                ..onTap = () {
+                                  URLLauncherHelper.launchURL(
+                                      "https://support.google.com/wallet/answer/12059410?visit_id=638447083246507820-2381760658&p=passes_across_google&rd=1#passes_across_google&zippy=%2Cuse-passes-across-google");
+                                },
                             ),
                           ],
                         ),
@@ -187,6 +199,11 @@ class _ManagePassesDataScreenState extends State<ManagePassesDataScreen> {
                               style: TextStyle(
                                 color: Theme.of(context).primaryColor,
                               ),
+                              recognizer: TapGestureRecognizer()
+                                ..onTap = () {
+                                  URLLauncherHelper.launchURL(
+                                      "https://support.google.com/wallet/answer/12059410?visit_id=638447083246507820-2381760658&p=personalize_across_google&rd=1#personalize_across_google&zippy=%2Cpersonalization-across-google");
+                                },
                             ),
                           ],
                         ),
