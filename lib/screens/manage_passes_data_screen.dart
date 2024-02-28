@@ -27,45 +27,188 @@ class _ManagePassesDataScreenState extends State<ManagePassesDataScreen> {
           ),
         ],
       ),
-      body: Column(
-        children: [
-          Row(
-            children: [
-              Switch(
-                value: _personalizationWithinWallet,
-                onChanged: (value) {
-                  setState(() {
-                    _personalizationWithinWallet = value;
-                  });
-                },
-              ),
-            ],
-          ),
-          Row(
-            children: [
-              Switch(
-                value: _usePassesAcrossGoogle,
-                onChanged: (value) {
-                  setState(() {
-                    _usePassesAcrossGoogle = value;
-                  });
-                },
-              ),
-            ],
-          ),
-          Row(
-            children: [
-              Switch(
-                value: _personalizationAcrossGoogle,
-                onChanged: (value) {
-                  setState(() {
-                    _personalizationAcrossGoogle = value;
-                  });
-                },
-              ),
-            ],
-          ),
-        ],
+      body: Padding(
+        padding: const EdgeInsets.only(left: 20, right: 20, top: 18),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
+              "Manage passes data",
+              style: TextStyle(fontSize: 32),
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Personalization within Wallet",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize:
+                              Theme.of(context).textTheme.bodyLarge?.fontSize,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 5,
+                      ),
+                      RichText(
+                        text: TextSpan(
+                          style: TextStyle(
+                            color: Theme.of(context).textTheme.bodyLarge?.color,
+                            fontSize: 14,
+                          ),
+                          children: [
+                            const TextSpan(
+                              text:
+                                  "Get helpful tips, suggestions, and more in Wallet based on your passes and how you use them. This data will be saved to your Google Account and can be be removed at any time. ",
+                            ),
+                            TextSpan(
+                              text: "Learn how personalization works",
+                              style: TextStyle(
+                                color: Theme.of(context).primaryColor,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(
+                  width: 20,
+                ),
+                Switch(
+                  value: _personalizationWithinWallet,
+                  onChanged: (value) {
+                    setState(() {
+                      _personalizationWithinWallet = value;
+                    });
+                  },
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Use passes across Google",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize:
+                              Theme.of(context).textTheme.bodyLarge?.fontSize,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 5,
+                      ),
+                      RichText(
+                        text: TextSpan(
+                          style: TextStyle(
+                            color: Theme.of(context).textTheme.bodyLarge?.color,
+                            fontSize: 14,
+                          ),
+                          children: [
+                            const TextSpan(
+                              text:
+                                  "See things like flight updates, point balances, and event notifications in places like Maps, Calendar, and more. ",
+                            ),
+                            TextSpan(
+                              text: "Learn how passes work",
+                              style: TextStyle(
+                                color: Theme.of(context).primaryColor,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(
+                  width: 20,
+                ),
+                Switch(
+                  value: _usePassesAcrossGoogle,
+                  onChanged: (value) {
+                    setState(() {
+                      _usePassesAcrossGoogle = value;
+                    });
+                  },
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Personalization across Google",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize:
+                              Theme.of(context).textTheme.bodyLarge?.fontSize,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 5,
+                      ),
+                      RichText(
+                        text: TextSpan(
+                          style: TextStyle(
+                            color: Theme.of(context).textTheme.bodyLarge?.color,
+                            fontSize: 14,
+                          ),
+                          children: [
+                            const TextSpan(
+                              text:
+                                  "Get better recommendations, results, and more based on your passes and how you use them in places like Maps, Calendar, and Assistant. ",
+                            ),
+                            TextSpan(
+                              text: "Learn how personalization works",
+                              style: TextStyle(
+                                color: Theme.of(context).primaryColor,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(
+                  width: 20,
+                ),
+                Switch(
+                  value: _personalizationAcrossGoogle,
+                  onChanged: (value) {
+                    setState(() {
+                      _personalizationAcrossGoogle = value;
+                    });
+                  },
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
