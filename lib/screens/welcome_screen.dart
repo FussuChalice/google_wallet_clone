@@ -153,7 +153,13 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     height: 20,
                   ),
                   FilledButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const HomeScreen()),
+                      );
+                    },
                     child: const Text("View Wallet"),
                   ),
                 ],
