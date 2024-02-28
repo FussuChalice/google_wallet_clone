@@ -152,7 +152,9 @@ class _LearnHowPassesInYourWalletScreenState
             Padding(
               padding: const EdgeInsets.only(left: 120, right: 120, top: 40),
               child: FilledButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pop(context);
+                },
                 child: const Text("Got it"),
               ),
             ),
