@@ -16,11 +16,24 @@ class Assets {
   /// ![preview](file:///run/media/mmakaluk/0df67660-9723-42fa-bf01-b5906eefa4c1/Projects/google_wallet_clone/assets/Google_Pay_Logo.png)
   static const String ASSETS_GOOGLE_PAY_LOGO_PNG = 'assets/Google_Pay_Logo.png';
 
+  /// ![preview](file:///run/media/mmakaluk/0df67660-9723-42fa-bf01-b5906eefa4c1/Projects/google_wallet_clone/assets/KG.png)
+  static const String ASSETS_KG_PNG = 'assets/KG.png';
+
   /// ![preview](file:///run/media/mmakaluk/0df67660-9723-42fa-bf01-b5906eefa4c1/Projects/google_wallet_clone/assets/Kz.json)
   static const String ASSETS_KZ_JSON = 'assets/Kz.json';
 
+  /// ![preview](file:///run/media/mmakaluk/0df67660-9723-42fa-bf01-b5906eefa4c1/Projects/google_wallet_clone/assets/Mastercard-logo.svg.webp)
+  static const String ASSETS_MASTERCARD_LOGO_SVG_WEBP =
+      'assets/Mastercard-logo.svg.webp';
+
+  /// ![preview](file:///run/media/mmakaluk/0df67660-9723-42fa-bf01-b5906eefa4c1/Projects/google_wallet_clone/assets/PN.webp)
+  static const String ASSETS_PN_WEBP = 'assets/PN.webp';
+
   /// ![preview](file:///run/media/mmakaluk/0df67660-9723-42fa-bf01-b5906eefa4c1/Projects/google_wallet_clone/assets/QC.png)
   static const String ASSETS_QC_PNG = 'assets/QC.png';
+
+  /// ![preview](file:///run/media/mmakaluk/0df67660-9723-42fa-bf01-b5906eefa4c1/Projects/google_wallet_clone/assets/Tz.png)
+  static const String ASSETS_TZ_PNG = 'assets/Tz.png';
 
   /// ![preview](file:///run/media/mmakaluk/0df67660-9723-42fa-bf01-b5906eefa4c1/Projects/google_wallet_clone/assets/a3.webp)
   static const String ASSETS_A3_WEBP = 'assets/a3.webp';
@@ -51,6 +64,10 @@ class Assets {
 
   /// ![preview](file:///run/media/mmakaluk/0df67660-9723-42fa-bf01-b5906eefa4c1/Projects/google_wallet_clone/assets/p2p_success.json)
   static const String ASSETS_P2P_SUCCESS_JSON = 'assets/p2p_success.json';
+
+  /// ![preview](file:///run/media/mmakaluk/0df67660-9723-42fa-bf01-b5906eefa4c1/Projects/google_wallet_clone/assets/paypal_logo_icon_147252.png)
+  static const String ASSETS_PAYPAL_LOGO_ICON_147252_PNG =
+      'assets/paypal_logo_icon_147252.png';
 
   /// ![preview](file:///run/media/mmakaluk/0df67660-9723-42fa-bf01-b5906eefa4c1/Projects/google_wallet_clone/assets/pperf.jpg)
   static const String ASSETS_PPERF_JPG = 'assets/pperf.jpg';

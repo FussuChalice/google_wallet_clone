@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_wallet_clone/assets.dart';
 import 'package:google_wallet_clone/colors.dart';
 import 'package:google_wallet_clone/material_theme.dart';
+import 'package:google_wallet_clone/screens/screens.dart';
 import 'package:google_wallet_clone/widgets/widgets.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -48,7 +49,14 @@ class _HomeScreenState extends State<HomeScreen> {
                   //   height: 114,
                   // ),
                   AddBankCardCard(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                const AddAPaymentCardScreen()),
+                      );
+                    },
                   ),
                   const SizedBox(
                     height: 50,

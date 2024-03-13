@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_wallet_clone/assets.dart';
+import 'package:google_wallet_clone/database/database.dart';
 import 'package:google_wallet_clone/helpers/url_launcher_helper.dart';
 import 'package:google_wallet_clone/material_theme.dart';
 import 'package:google_wallet_clone/screens/screens.dart';
 import 'package:google_wallet_clone/widgets/widgets.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:lottie/lottie.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -159,6 +161,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                         MaterialPageRoute(
                             builder: (context) => const HomeScreen()),
                       );
+
+                      Hive.box(HiveBoxNames.SETTINGS_BOX)
+                          .put(HiveKeys.SKIP_WELCOME_PAGE, true);
                     },
                     child: const Text("View Wallet"),
                   ),

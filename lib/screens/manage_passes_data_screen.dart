@@ -1,7 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:google_wallet_clone/database/database.dart';
 import 'package:google_wallet_clone/helpers/helpers.dart';
-import 'package:hive/hive.dart';
 import 'package:hive_flutter/adapters.dart';
 
 class ManagePassesDataScreen extends StatefulWidget {
@@ -12,10 +12,6 @@ class ManagePassesDataScreen extends StatefulWidget {
 }
 
 class _ManagePassesDataScreenState extends State<ManagePassesDataScreen> {
-  bool _personalizationWithinWallet = true;
-  bool _usePassesAcrossGoogle = true;
-  bool _personalizationAcrossGoogle = false;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -166,11 +162,9 @@ class _ManagePassesDataScreenState extends State<ManagePassesDataScreen> {
                       width: 20,
                     ),
                     Switch(
-                      value: _usePassesAcrossGoogle,
+                      value: box.get(HiveKeys.USE_PASSES_ACROSS_GOOGLE),
                       onChanged: (value) {
-                        setState(() {
-                          _usePassesAcrossGoogle = value;
-                        });
+                        box.put(HiveKeys.USE_PASSES_ACROSS_GOOGLE, value);
                       },
                     ),
                   ],
@@ -233,11 +227,9 @@ class _ManagePassesDataScreenState extends State<ManagePassesDataScreen> {
                       width: 20,
                     ),
                     Switch(
-                      value: _personalizationAcrossGoogle,
+                      value: box.get(HiveKeys.PERSONALIZATION_ACROSS_GOOGLE),
                       onChanged: (value) {
-                        setState(() {
-                          _personalizationAcrossGoogle = value;
-                        });
+                        box.put(HiveKeys.PERSONALIZATION_ACROSS_GOOGLE, value);
                       },
                     ),
                   ],

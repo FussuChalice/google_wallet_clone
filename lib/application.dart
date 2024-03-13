@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:google_wallet_clone/database/database.dart';
 import 'package:google_wallet_clone/material_theme.dart';
 import 'package:google_wallet_clone/screens/screens.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
 class Application extends StatefulWidget {
   const Application({super.key});
@@ -62,6 +64,8 @@ class _ApplicationState extends State<Application> {
 
   @override
   Widget build(BuildContext context) {
+    var _settingsBox = Hive.box(HiveBoxNames.SETTINGS_BOX);
+
     return MaterialApp(
       title: "Google Wallet Clone",
       theme: ThemeData(
@@ -82,7 +86,9 @@ class _ApplicationState extends State<Application> {
         brightness: Brightness.dark,
       ),
       debugShowCheckedModeBanner: false,
-      home: const WelcomeScreen(),
+      home: _settingsBox.get(HiveKeys.SKIP_WELCOME_PAGE) != true
+          ? const WelcomeScreen()
+          : const HomeScreen(),
     );
   }
 }
