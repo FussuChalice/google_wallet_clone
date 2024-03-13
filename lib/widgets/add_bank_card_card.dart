@@ -2,9 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:google_wallet_clone/assets.dart';
 import 'package:google_wallet_clone/colors.dart';
 
+/// AddBankCardCard is a Flutter widget that displays a card with an image background,
+/// an icon, a text message, and an "Add a card" button. It is designed to be used in
+/// the Google Wallet clone application.
 class AddBankCardCard extends StatelessWidget {
+  /// Constructor for AddBankCardCard.
+  ///
+  /// Parameters:
+  ///   - [key]: An optional key to uniquely identify this widget.
+  ///   - [onPressed]: A callback function that is triggered when the "Add a card" button is pressed.
   const AddBankCardCard({super.key, this.onPressed});
 
+  /// A callback function that is triggered when the "Add a card" button is pressed.
   final VoidCallback? onPressed;
 
   @override
@@ -26,6 +35,7 @@ class AddBankCardCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            // Icon displaying contactless payment symbol in white color.
             const Icon(
               Icons.contactless_outlined,
               color: Colors.white,
@@ -33,6 +43,7 @@ class AddBankCardCard extends StatelessWidget {
             const SizedBox(
               height: 5,
             ),
+            // Text message indicating the ability to pay everywhere Google Pay is accepted.
             const Text(
               "Pay everywhere Google Pay is accepted",
               style: TextStyle(
@@ -43,6 +54,7 @@ class AddBankCardCard extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
+            // Elevated button prompting users to add a card.
             ElevatedButton(
               onPressed: onPressed,
               child: const Text(

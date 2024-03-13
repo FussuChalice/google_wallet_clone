@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-// Whether the user has chosen a theme color via a direct [ColorSeed] selection,
-// or an image [ColorImageProvider].
+/// Enumeration indicating the method of color selection.
 enum ColorSelectionMethod {
   colorSeed,
   image,
 }
 
+/// Enumeration of predefined color seeds.
 enum ColorSeed {
   baseColor('M3 Baseline', Color(0xff6750a4)),
   indigo('Indigo', Colors.indigo),
@@ -25,6 +25,7 @@ enum ColorSeed {
   final Color color;
 }
 
+/// Enumeration of predefined color image providers.
 enum ColorImageProvider {
   leaves('Leaves',
       'https://flutter.github.io/assets-for-api-docs/assets/material/content_based_color_scheme_1.png'),
@@ -44,12 +45,13 @@ enum ColorImageProvider {
   final String url;
 }
 
+/// Sets the system UI overlay style based on the current theme.
 void setSystemUIOverlayStyle(BuildContext context) {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
     systemNavigationBarColor:
-        Theme.of(context).scaffoldBackgroundColor, // navigation bar color
+        Theme.of(context).scaffoldBackgroundColor, // Navigation bar color
     statusBarColor:
-        Theme.of(context).scaffoldBackgroundColor, // status bar color
+        Theme.of(context).scaffoldBackgroundColor, // Status bar color
     statusBarIconBrightness: Theme.of(context).brightness == Brightness.light
         ? Brightness.dark
         : Brightness.light,
